@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="t">
+  <title id="t">Avatar de Luan, desenho simples de uma pessoa em frente a um notebook</title>
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="200" fill="url(#fundo)"/>
+  <!-- corpo -->
+  <path d="M70 360c0-70 56-110 130-110s130 40 130 110c-36 28-80 40-130 40s-94-12-130-40z" fill="#1e293b"/>
+  <!-- pescoço -->
+  <rect x="176" y="212" width="48" height="46" rx="18" fill="#e0a87c"/>
+  <!-- cabeça -->
+  <circle cx="200" cy="170" r="62" fill="#f1c19b"/>
+  <!-- cabelo -->
+  <path d="M138 160c2-46 34-70 66-70 36 0 62 26 60 70-14-22-36-34-62-34-26 0-48 12-64 34z" fill="#2b1d14"/>
+  <!-- olhos -->
+  <circle cx="178" cy="176" r="6" fill="#1f2937"/>
+  <circle cx="222" cy="176" r="6" fill="#1f2937"/>
+  <!-- sorriso -->
+  <path d="M180 202q20 18 40 0" fill="none" stroke="#7a3e1d" stroke-width="5" stroke-linecap="round"/>
+  <!-- notebook -->
+  <rect x="120" y="300" width="160" height="70" rx="8" fill="#e2e8f0"/>
+  <rect x="130" y="308" width="140" height="54" rx="4" fill="#0f172a"/>
+  <text x="200" y="344" text-anchor="middle" font-family="Consolas, monospace" font-size="26" font-weight="700" fill="#60a5fa">&lt;/&gt;</text>
+  <rect x="104" y="370" width="192" height="10" rx="5" fill="#cbd5e1"/>
+</svg>

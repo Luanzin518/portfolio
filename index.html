@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luan Albuquerque | Portfólio de Desenvolvimento Web</title>
+  <meta name="description" content="Portfólio de Luan Riquelme Pereira de Albuquerque, estudante do Médio-Tec do Senac em busca de estágio na área de tecnologia.">
+  <link rel="icon" href="img/avatar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="topo">
+  <!-- Link para quem navega por teclado pular direto ao conteúdo -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="Luan Albuquerque, ir para o início">
+        <span class="logo__simbolo" aria-hidden="true">&lt;/&gt;</span>
+        <span>Luan<span class="logo__destaque">.dev</span></span>
+      </a>
+
+      <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre mim</a></li>
+          <li><a class="nav__link" href="#habilidades">Habilidades</a></li>
+          <li><a class="nav__link" href="#projetos">Projetos</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__acoes">
+        <button class="btn-icone" id="btn-tema" type="button" aria-pressed="false" aria-label="Ativar modo escuro">
+          <span id="icone-tema" aria-hidden="true">🌙</span>
+        </button>
+        <button class="btn-icone btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu de navegação">
+          <span class="btn-menu__barras" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== INÍCIO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="container hero__grid">
+        <div class="hero__texto">
+          <p class="hero__saudacao" id="saudacao" aria-live="polite">Olá!</p>
+          <h1 id="titulo-inicio">Eu sou o <span class="destaque">Luan</span>,<br>estudante de tecnologia</h1>
+          <p class="hero__descricao">
+            Estudo no Médio-Tec do Senac e estou construindo minha trajetória em desenvolvimento web.
+            Busco uma oportunidade de estágio para aprender com a prática e crescer na área.
+          </p>
+          <div class="hero__botoes">
+            <a class="btn btn--primario" href="#projetos">Ver meus projetos</a>
+            <a class="btn btn--secundario" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+
+        <div class="hero__imagem">
+          <img src="img/avatar.svg" width="400" height="400"
+               alt="Avatar ilustrado de Luan: uma pessoa de cabelo escuro sorrindo, em frente a um notebook com o símbolo de código na tela">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MIM ===================== -->
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="container">
+        <h2 class="secao__titulo" id="titulo-sobre">Sobre mim</h2>
+        <div class="sobre__grid">
+          <div class="sobre__texto">
+            <p>
+              Meu nome é <strong>Luan Riquelme Pereira de Albuquerque</strong> e sou estudante do
+              <strong>Médio-Tec do Senac</strong>. Durante o curso, tenho desenvolvido projetos web
+              que unem a parte visual com a lógica por trás das aplicações.
+            </p>
+            <p>
+              Busco desafios para me aprimorar e crescer profissionalmente no ramo da tecnologia.
+              Tenho interesse nas três frentes do desenvolvimento web:
+              <strong>front-end</strong>, <strong>back-end</strong> e <strong>full stack</strong>.
+            </p>
+          </div>
+
+          <aside class="sobre__cartao" aria-label="Resumo de objetivos">
+            <h3>Meus objetivos</h3>
+            <ul class="lista-check">
+              <li>Conseguir uma vaga de estágio em tecnologia</li>
+              <li>Aprender com projetos reais e com uma equipe</li>
+              <li>Evoluir em Python, Flask e desenvolvimento web</li>
+              <li>Descobrir em qual área quero me especializar</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section class="secao secao--alt" id="habilidades" aria-labelledby="titulo-habilidades">
+      <div class="container">
+        <h2 class="secao__titulo" id="titulo-habilidades">Habilidades</h2>
+        <p class="secao__intro">Tecnologias e conhecimentos que utilizo nos meus projetos.</p>
+
+        <ul class="habilidades">
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">🐍</span>
+            <h3>Python</h3>
+            <p>Programação, estruturas de dados e lógica do lado do servidor.</p>
+          </li>
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">🧪</span>
+            <h3>Flask</h3>
+            <p>Aplicações web com rotas, templates e formulários.</p>
+          </li>
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">🧱</span>
+            <h3>HTML</h3>
+            <p>Estrutura semântica e acessível para as páginas.</p>
+          </li>
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">🎨</span>
+            <h3>CSS</h3>
+            <p>Estilização, Flexbox, Grid e layouts responsivos.</p>
+          </li>
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">⚡</span>
+            <h3>JavaScript</h3>
+            <p>Interatividade, manipulação do DOM e validação de formulários.</p>
+          </li>
+          <li class="card">
+            <span class="card__icone" aria-hidden="true">🧠</span>
+            <h3>Lógica de programação</h3>
+            <p>Resolver problemas em passos claros, com condições e repetições.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="secao" id="projetos" aria-labelledby="titulo-projetos">
+      <div class="container">
+        <h2 class="secao__titulo" id="titulo-projetos">Projetos</h2>
+        <p class="secao__intro">Projetos desenvolvidos durante o curso.</p>
+
+        <div class="projetos">
+
+          <article class="projeto">
+            <img class="projeto__img" src="img/projeto-cinerepertorio.png" width="800" height="450" loading="lazy"
+                 alt="Página inicial do CineRepertório, com fundo escuro, título 'Filmes que viram argumento na sua redação' e cartazes de filmes">
+            <div class="projeto__corpo">
+              <h3>CineRepertório</h3>
+              <p>
+                Catálogo de filmes para usar como repertório sociocultural na redação do ENEM.
+                Reúne filmes organizados por tema, com nota, sinopse e orientação de uso por parágrafo.
+              </p>
+              <ul class="tags" aria-label="Tecnologias usadas">
+                <li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="projeto">
+            <img class="projeto__img" src="img/projeto-bellaglow.png" width="800" height="450" loading="lazy"
+                 alt="Página inicial da loja BellaGlow, com menu, título 'Sua Beleza, Nossa Paixão' e botões para explorar a coleção">
+            <div class="projeto__corpo">
+              <h3>BellaGlow</h3>
+              <p>
+                Site de uma loja de cosméticos com página inicial, menu de navegação,
+                busca, favoritos, carrinho, modo escuro e aviso de cookies.
+              </p>
+              <ul class="tags" aria-label="Tecnologias usadas">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="projeto">
+            <img class="projeto__img" src="img/projeto-biblioteca.png" width="800" height="450" loading="lazy"
+                 alt="Tela do Sistema de Biblioteca, com cabeçalho azul e formulário para cadastrar autor">
+            <div class="projeto__corpo">
+              <h3>Sistema de Biblioteca</h3>
+              <p>
+                Sistema para cadastrar e consultar livros, autores e leitores,
+                com formulários simples e organizados.
+              </p>
+              <ul class="tags" aria-label="Tecnologias usadas">
+                <li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="secao secao--alt" id="contato" aria-labelledby="titulo-contato">
+      <div class="container">
+        <h2 class="secao__titulo" id="titulo-contato">Contato</h2>
+        <p class="secao__intro">Vamos conversar? Envie uma mensagem ou fale comigo pelos canais abaixo.</p>
+
+        <div class="contato__grid">
+          <form class="form" id="form-contato" novalidate aria-labelledby="titulo-contato">
+
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required
+                     aria-describedby="erro-nome">
+              <p class="erro" id="erro-nome" role="alert"></p>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required
+                     aria-describedby="erro-email">
+              <p class="erro" id="erro-email" role="alert"></p>
+            </div>
+
+            <div class="campo">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="5" required
+                        aria-describedby="erro-mensagem"></textarea>
+              <p class="erro" id="erro-mensagem" role="alert"></p>
+            </div>
+
+            <div class="campo campo--check">
+              <input type="checkbox" id="consentimento" name="consentimento" required
+                     aria-describedby="erro-consentimento">
+              <label for="consentimento">
+                Concordo em fornecer meus dados (nome, e-mail e mensagem) apenas para que o Luan
+                possa responder ao meu contato.
+              </label>
+              <p class="erro" id="erro-consentimento" role="alert"></p>
+            </div>
+
+            <button class="btn btn--primario" type="submit">Enviar mensagem</button>
+
+            <p class="form__status" id="status-form" role="status" aria-live="polite"></p>
+
+            <p class="form__privacidade">
+              Cuidado com seus dados: este formulário é uma demonstração.
+              As informações digitadas não são enviadas nem armazenadas em nenhum servidor.
+            </p>
+          </form>
+
+          <aside class="contato__canais" aria-label="Outros canais de contato">
+            <h3>Outros canais</h3>
+            <ul class="canais">
+              <li>
+                <span aria-hidden="true">✉️</span>
+                <a href="mailto:gpsnascimento2022@gmail.com">gpsnascimento2022@gmail.com</a>
+              </li>
+              <li>
+                <span aria-hidden="true">💻</span>
+                <a href="https://github.com/Luanzin518" target="_blank" rel="noopener noreferrer"
+                   aria-label="GitHub de Luan (Luanzin518), abre em nova aba">github.com/Luanzin518</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="ano">2026</span> Luan Riquelme Pereira de Albuquerque. Todos os direitos reservados.</p>
+      <a class="footer__topo" href="#topo" aria-label="Voltar ao topo da página">↑ Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

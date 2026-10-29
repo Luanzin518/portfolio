@@ -1,0 +1,629 @@
+/* =========================================================
+   Portfólio - Luan Albuquerque
+   Organização: 1) variáveis  2) base  3) componentes
+                4) seções     5) responsividade
+   ========================================================= */
+
+/* ---------- 1) VARIÁVEIS (tema claro e escuro) ---------- */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f1f5f9;
+  --card: #ffffff;
+  --texto: #1a1f2b;
+  --texto-suave: #475569;
+  --primaria: #1d4ed8;
+  --primaria-hover: #1e40af;
+  --sobre-primaria: #ffffff;
+  --destaque: #1d4ed8;
+  --borda: #cbd5e1;
+  --erro: #b91c1c;
+  --sucesso: #166534;
+  --foco: #7c3aed;
+  --sombra: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --raio: 14px;
+  --altura-header: 68px;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-alt: #162033;
+  --card: #1e293b;
+  --texto: #e5e7eb;
+  --texto-suave: #b6c2d4;
+  --primaria: #60a5fa;
+  --primaria-hover: #93c5fd;
+  --sobre-primaria: #0b1220;
+  --destaque: #93c5fd;
+  --borda: #3b4a63;
+  --erro: #fca5a5;
+  --sucesso: #86efac;
+  --foco: #fbbf24;
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 2) BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--altura-header);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--primaria);
+}
+
+/* Foco visível para quem usa teclado */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+/* Link "pular para o conteúdo" (aparece só ao receber foco) */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 200;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* ---------- 3) COMPONENTES ---------- */
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--primaria);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn--primario {
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+}
+.btn--primario:hover {
+  background: var(--primaria-hover);
+  border-color: var(--primaria-hover);
+}
+.btn--secundario {
+  background: transparent;
+  color: var(--primaria);
+}
+.btn--secundario:hover {
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+}
+
+.btn-icone {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--borda);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--texto);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.btn-icone:hover {
+  border-color: var(--primaria);
+}
+
+/* Cartões */
+.card {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4em;
+}
+.card p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.97rem;
+}
+.card__icone {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 4) SEÇÕES ---------- */
+
+/* Cabeçalho */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--altura-header);
+  background: var(--bg);
+  border-bottom: 1px solid var(--borda);
+}
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.header__acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--texto);
+  text-decoration: none;
+}
+.logo__simbolo {
+  font-family: Consolas, "Courier New", monospace;
+  background: var(--primaria);
+  color: var(--sobre-primaria);
+  padding: 0.1rem 0.45rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.logo__destaque {
+  color: var(--destaque);
+}
+
+/* Menu (desktop) */
+.nav__lista {
+  display: flex;
+  gap: 0.25rem;
+}
+.nav__link {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav__link:hover {
+  background: var(--bg-alt);
+  color: var(--primaria);
+}
+
+/* Botão hambúrguer (escondido no desktop) */
+.btn-menu {
+  display: none;
+}
+.btn-menu__barras,
+.btn-menu__barras::before,
+.btn-menu__barras::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.btn-menu__barras {
+  position: relative;
+}
+.btn-menu__barras::before,
+.btn-menu__barras::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.btn-menu__barras::before { top: -6px; }
+.btn-menu__barras::after  { top: 6px; }
+
+/* Animação do hambúrguer virando "X" */
+.btn-menu[aria-expanded="true"] .btn-menu__barras {
+  background: transparent;
+}
+.btn-menu[aria-expanded="true"] .btn-menu__barras::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.btn-menu[aria-expanded="true"] .btn-menu__barras::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Início (hero) - usa CSS Grid */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(160deg, var(--bg) 40%, var(--bg-alt));
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+.hero__saudacao {
+  display: inline-block;
+  background: var(--bg-alt);
+  border: 1px solid var(--borda);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+.destaque {
+  color: var(--destaque);
+}
+.hero__descricao {
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+  max-width: 55ch;
+}
+.hero__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.hero__imagem img {
+  width: min(380px, 100%);
+  margin-inline: auto;
+  border-radius: 50%;
+  box-shadow: var(--sombra);
+}
+
+/* Seções genéricas */
+.secao {
+  padding: 4.5rem 0;
+}
+.secao--alt {
+  background: var(--bg-alt);
+}
+.secao__titulo {
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.secao__titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--primaria);
+  margin-top: 0.5rem;
+}
+.secao__intro {
+  color: var(--texto-suave);
+  margin-bottom: 2rem;
+}
+
+/* Sobre mim - Flexbox */
+.sobre__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.sobre__texto {
+  flex: 2 1 320px;
+}
+.sobre__cartao {
+  flex: 1 1 280px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.lista-check li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+.lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--sucesso);
+  font-weight: 800;
+}
+
+/* Habilidades - Grid */
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Projetos - Grid */
+.projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+.projeto {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s;
+}
+.projeto:hover {
+  transform: translateY(-4px);
+}
+.projeto__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--borda);
+}
+.projeto__corpo {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+.projeto__corpo h3 {
+  font-size: 1.25rem;
+}
+.projeto__corpo p {
+  color: var(--texto-suave);
+  font-size: 0.97rem;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags li {
+  background: var(--bg-alt);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Contato */
+.contato__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.form {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.75rem;
+  box-shadow: var(--sombra);
+}
+.campo {
+  margin-bottom: 1.2rem;
+}
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.campo input[type="text"],
+.campo input[type="email"],
+.campo textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  color: var(--texto);
+  background: var(--bg);
+  border: 2px solid var(--borda);
+  border-radius: 10px;
+}
+.campo textarea {
+  resize: vertical;
+}
+.campo input[aria-invalid="true"],
+.campo textarea[aria-invalid="true"] {
+  border-color: var(--erro);
+}
+.campo--check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.7rem;
+  align-items: start;
+}
+.campo--check input {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.25rem;
+  accent-color: var(--primaria);
+}
+.campo--check label {
+  font-weight: 400;
+  margin: 0;
+}
+.campo--check .erro {
+  grid-column: 1 / -1;
+}
+.erro {
+  color: var(--erro);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.35rem 0 0;
+  min-height: 0;
+}
+.form__status {
+  margin: 1rem 0 0;
+  font-weight: 600;
+  color: var(--sucesso);
+}
+.form__privacidade {
+  margin: 1rem 0 0;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.contato__canais {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.canais li {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  word-break: break-word;
+}
+
+/* Rodapé */
+.footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--borda);
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.footer__inner p {
+  margin: 0;
+}
+.footer__topo {
+  font-weight: 600;
+}
+
+/* ---------- 5) RESPONSIVIDADE ---------- */
+
+/* Tablets e celulares: menu vira hambúrguer */
+@media (max-width: 768px) {
+  .btn-menu {
+    display: grid;
+  }
+
+  .nav {
+    position: absolute;
+    top: var(--altura-header);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    display: none;
+    padding: 0.5rem 1rem 1rem;
+  }
+  .nav.aberto {
+    display: block;
+  }
+  .nav__lista {
+    flex-direction: column;
+  }
+  .nav__link {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 0;
+  }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero__imagem {
+    order: -1;
+  }
+  .hero__imagem img {
+    width: min(240px, 70%);
+  }
+  .hero__descricao {
+    margin-inline: auto;
+  }
+  .hero__botoes {
+    justify-content: center;
+  }
+
+  .contato__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
